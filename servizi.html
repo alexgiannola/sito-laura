@@ -25,8 +25,8 @@ a{color:inherit;text-decoration:none}
   --avorio:#faf8f3;
   --marrone:#8b6f5c;
   --marrone-chiaro:#c4a882;
-  --testo:#2d3a2e;
-  --testo-muted:#5a6b5c;
+  --testo:#1a2a1c;
+  --testo-muted:#3a4a3c;
   --bianco:#ffffff;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',sans-serif;
@@ -48,8 +48,8 @@ nav{
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(107,143,113,.15);
   box-shadow:0 1px 12px rgba(61,107,79,.06);
-}
-.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;}
+overflow:visible;}
+.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.3rem 2rem;}
 .nav-logo img{height:36px;width:auto}
 .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
 .nav-links a{
@@ -255,6 +255,10 @@ footer{background:#1e2e21;color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}
   .container{padding:0!important}
   .section-label{font-size:.65rem!important}
 }
+
+nav{transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+nav.scrolled{background:rgba(250,248,243,.75)!important;backdrop-filter:blur(16px);box-shadow:0 1px 20px rgba(61,107,79,.08)}
+nav.top{background:rgba(250,248,243,.97);box-shadow:none}
 </style>
 </head>
 <body>
@@ -472,5 +476,22 @@ footer{background:#1e2e21;color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}
   </div>
   <div class="footer-bottom"><span>&copy; 2025 Dott.ssa Laura Passalacqua. Tutti i diritti riservati.</span><span>P.IVA / C.F. da inserire</span></div>
 </footer>
+
+<script>
+(function(){
+  var nav = document.querySelector('nav');
+  function onScroll(){
+    if(window.scrollY > 40){
+      nav.classList.add('scrolled');
+      nav.classList.remove('top');
+    } else {
+      nav.classList.remove('scrolled');
+      nav.classList.add('top');
+    }
+  }
+  nav.classList.add('top');
+  window.addEventListener('scroll', onScroll, {passive:true});
+})();
+</script>
 </body>
 </html>
