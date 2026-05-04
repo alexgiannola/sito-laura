@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
-  const PLACE_ID = 'ChIJXVIhV4jvGRMRmfQSgMT';
-  const API_KEY  = 'AIzaSyAyuIp5zbqI6VR_HX9UStdGTGVgNXR9TGo';
+  const PLACE_ID = 'ChIJXVIhV4jvGRMRmfQSgMT4S4s';
+  const API_KEY  = 'AIzaSyDk8fUjEye4Qr8J6eG7i1g4qs773Hlj1qs';
 
   const url = 'https://maps.googleapis.com/maps/api/place/details/json'
     + '?place_id=' + PLACE_ID
